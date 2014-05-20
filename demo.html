@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="author" content="gencyolcu" />
+
+	<title>Testes em plugins</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="Popbox/jquery.popbox.css" />
+    <script src="Popbox/jquery.popbox.js"></script>
+    <script>
+    $(function(){
+        $("#popbox").popbox({
+            xhtml: false,
+            fundo: true,
+            movel: true
+        });
+        $("popbox").popbox({
+            fundo: false
+        });
+        $("#abrir").click(function(){
+           $("#popbox").popbox("Toggle");
+        });
+        $("#abrirX").click(function(){
+           $("popbox").popbox("Toggle");
+        });
+    });
+    </script>
+</head>
+
+<body>
+<button id="abrirX">Abrir XHTML</button>
+<button id="abrir">Abrir HTML</button>
+<popbox title="XHTML">
+Conteudo teste apenas
+</popbox>
+<div id="popbox" title="HTML Simples">
+Conteudo teste apenas 
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+popbox, .popbox {
+    border:1px #dedede solid;
+    background:#fff;
+    border: 1px solid #e5e5e5;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.2);
+    box-shadow: 0 1px 1px rgba(0,0,0,.2);
+    position: absolute;
+    padding: 10px;
+    outline: 0;
+    display: none;
+    color:#888;
+    border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+    z-index:2000;
+    font-size:12px;
+}
+
+.popboxFundo {
+    background: #000;
+    opacity:0.4;
+    position:fixed;
+    top:0;
+    left:0;
+    display:none;
+    z-index:1000;
+}
+popbox .titulo, .popbox .titulo {
+    background: #eee;
+    display:block;
+    padding:10px;
+    margin: -10px;
+    margin-bottom:5px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+popbox .movel, .popbox .movel {
+    cursor: move;
+}
