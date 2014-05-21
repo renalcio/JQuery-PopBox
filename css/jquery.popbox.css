@@ -2,8 +2,8 @@ popbox, .popbox {
     border:1px #dedede solid;
     background:#fff;
     border: 1px solid #e5e5e5;
-    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.2);
-    box-shadow: 0 1px 1px rgba(0,0,0,.2);
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.3);
+    box-shadow: 0 1px 1px rgba(0,0,0,.3);
     position: absolute;
     padding: 10px;
     outline: 0;
@@ -37,4 +37,13 @@ popbox .titulo, .popbox .titulo {
 
 popbox .movel, .popbox .movel {
     cursor: move;
+}
+popbox .btnFechar, .popbox .btnFechar {
+    cursor: pointer;
+    background:  url(../img/fechar-cinza.png) center;
+    height:14px;
+    width:14px;
+    position: absolute;
+    right:8px;
+    top:8px;
 }

@@ -8,17 +8,18 @@
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
   <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-    <link rel="stylesheet" href="Popbox/jquery.popbox.css" />
-    <script src="Popbox/jquery.popbox.js"></script>
+    <link rel="stylesheet" href="css/jquery.popbox.css" />
+    <script src="js/jquery.popbox.js"></script>
     <script>
     $(function(){
         $("#popbox").popbox({
             xhtml: false,
             fundo: true,
-            movel: true
+            autoOpen: true
         });
         $("popbox").popbox({
-            fundo: false
+            fundo: false,
+            movel: true
         });
         $("#abrir").click(function(){
            $("#popbox").popbox("Toggle");
@@ -36,7 +37,7 @@
 <popbox title="XHTML">
 Conteudo teste apenas
 </popbox>
-<div id="popbox" title="HTML Simples">
+<div id="popbox">
 Conteudo teste apenas 
 </div>
 </body>
