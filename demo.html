@@ -15,11 +15,11 @@
         $("#popbox").popbox({
             xhtml: false,
             fundo: true,
-            autoOpen: true
+            //autoOpen: true
         });
-        $("popbox").popbox({
-            fundo: false,
-            movel: true
+        $(".popbox2").popbox({
+            xhtml:false,
+            fundo: true,
         });
         $("#abrir").click(function(){
            $("#popbox").popbox("Toggle");
@@ -38,12 +38,12 @@
 <button id="abrirX1">Abrir XHTML</button>
 <button id="abrirX2">Abrir XHTML</button>
 <button id="abrir">Abrir HTML</button>
-<popbox id="pb1" title="XHTML">
+<div class="popbox2" id="pb1" title="XHTML">
 Conteudo teste apenas
-</popbox>
-<popbox id="pb2" title="XHTML2">
+</div>
+<div class="popbox2" id="pb2" title="XHTML2">
 Conteudo teste apenas2
-</popbox>
+</div>
 <div id="popbox">
 Conteudo teste apenas 
 </div>

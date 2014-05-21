@@ -23,8 +23,11 @@ Cria caixas de Popup, modal e dialogo
 				botaoFechar: true
 			};
 			options = $.extend(config, options);
+            return this.each(function(){
 			//Define Pai
 			var $this = $(this);
+            //var $thisid = $this.uniqueId();
+            //console.log($thisid);
 			
 			//Utilizar XHTML
 			if (options.xhtml == true) {
@@ -47,13 +50,7 @@ Cria caixas de Popup, modal e dialogo
 			} else {
 				options.fecharNoFundo = false;
 			}
-			//Fechar ao clicar no fundo
-			if (options.fecharNoFundo == true) {
-				$(".popboxFundo").click(function() {
-					$this.hide();
-					$(this).hide();
-				});
-			}
+			
 			//Título
 			if ($this.attr("title")) {
 				var titulo = $this.attr("title");
@@ -94,10 +91,23 @@ Cria caixas de Popup, modal e dialogo
 					if ($this.hasClass("popboxFundoOn")) {
 						$(".popboxFundo").hide();
 					}
-                    var boxPai = $(this).closest(popboxDiv);
-                    console.log(popboxDiv);
-                    console.log(boxPai);
-					boxPai.css("display", "none");
+                    //var boxPai = $(this).closest(popboxDiv);
+                    //console.log(popboxDiv);
+                    //console.log(boxPai);
+                    console.log($this);
+					$this.removeClass("aberto");
+					$this.addClass("fechado");
+                    console.log("aft: ");
+                    console.log($this);
+				});
+			}
+            
+            //Fechar ao clicar no fundo
+			if (options.fecharNoFundo == true) {
+				$(".popboxFundo").click(function() {
+				    console.log($thisid);
+					$(".popboxFundoOn").hide();
+					$(this).hide();
 				});
 			}
             
@@ -110,25 +120,35 @@ Cria caixas de Popup, modal e dialogo
 			}
 				$this.show();
 			}
+            });
 		},
 		Abrir: function() {
+		  
 			if ($(this).hasClass("popboxFundoOn")) {
 				$(".popboxFundo").show();
 			}
-			$(this).show();
+			$(this).show();		
+            $(this).removeClass("fechado");
+            $(this).addClass("aberto");
+            
 		},
 		// IS
 		Fechar: function() {
+		  
 			if ($(this).hasClass("popboxFundoOn")) {
 				$(".popboxFundo").hide();
-			}
-			$(this).hide();
+			}		
+            $(this).removeClass("aberto");
+            $(this).addClass("fechado");
+            
 		},
 		Toggle: function() {
+		  
 			if ($(this).hasClass("popboxFundoOn")) {
 				$(".popboxFundo").toggle();
 			}
 			$(this).toggle();
+            
 		}
 	};
 	$.fn.popbox = function(metodo) {

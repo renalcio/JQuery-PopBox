@@ -47,3 +47,10 @@ popbox .btnFechar, .popbox .btnFechar {
     right:8px;
     top:8px;
 }
+
+popbox.fechado, .popbox.fechado {
+    display:none !important;
+}
+popbox.aberto, .popbox.aberto {
+    display:block !important;
+}
