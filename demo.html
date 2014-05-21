@@ -24,18 +24,25 @@
         $("#abrir").click(function(){
            $("#popbox").popbox("Toggle");
         });
-        $("#abrirX").click(function(){
-           $("popbox").popbox("Toggle");
+        $("#abrirX1").click(function(){
+           $("#pb1").popbox("Toggle");
         });
+        $("#abrirX2").click(function(){
+           $("#pb2").popbox("Toggle");
+        });        
     });
     </script>
 </head>
 
 <body>
-<button id="abrirX">Abrir XHTML</button>
+<button id="abrirX1">Abrir XHTML</button>
+<button id="abrirX2">Abrir XHTML</button>
 <button id="abrir">Abrir HTML</button>
-<popbox title="XHTML">
+<popbox id="pb1" title="XHTML">
 Conteudo teste apenas
+</popbox>
+<popbox id="pb2" title="XHTML2">
+Conteudo teste apenas2
 </popbox>
 <div id="popbox">
 Conteudo teste apenas 

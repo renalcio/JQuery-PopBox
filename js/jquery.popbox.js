@@ -31,6 +31,7 @@ Cria caixas de Popup, modal e dialogo
 				var popboxDiv = "popbox";
 			} else {
 				$this.addClass("popbox");
+                var popboxDiv = ".popbox";
 			}
 			//FUNDO
 			if (options.fundo == true) {
@@ -66,23 +67,17 @@ Cria caixas de Popup, modal e dialogo
 			if (options.movel == true) {
 				if ($this.attr("title") || $this.attr("titulo")) {
 					$this.draggable({
-						handle: "h1"
+						handle: "h1",
+                        stack: "body "+popboxDiv
 					});
 					$("h1.titulo", this).addClass("movel");
 				} else {
-					$this.draggable().addClass("movel");
+					$this.draggable({
+					   stack: "body "+popboxDiv
+					}).addClass("movel");
 				}
 			}
-			//Botão Fechar
-			if (options.botaoFechar == true) {
-				$this.prepend("<div class='btnFechar'></div>");
-				$(".btnFechar", this).click(function() {
-					if ($this.hasClass("popboxFundoOn")) {
-						$(".popboxFundo").hide();
-					}
-					$this.hide();
-				});
-			}
+			
 			var width = $this.width();
 			var height = $this.height();
 			$this.css({
@@ -92,7 +87,19 @@ Cria caixas de Popup, modal e dialogo
 				"margin-top": "-" + (height / 2) + "px"
 			});
             
-            
+            //Botão Fechar
+			if (options.botaoFechar == true) {
+				$this.prepend("<div class='btnFechar'></div>");
+				$($this).find(".btnFechar").click(function() {
+					if ($this.hasClass("popboxFundoOn")) {
+						$(".popboxFundo").hide();
+					}
+                    var boxPai = $(this).closest(popboxDiv);
+                    console.log(popboxDiv);
+                    console.log(boxPai);
+					boxPai.css("display", "none");
+				});
+			}
             
             //Abrir automaticamente ULTIMO!
 			if (options.autoOpen == true) {
